@@ -1,0 +1,14 @@
+.inputTagCSS {
+    height: 2rem;
+    padding: 3px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: none;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.inputTagCSS:focus {
+    border-color: none;
+}
