@@ -1,8 +1,9 @@
 .inputTagCSS {
-    height: 2rem;
+    height: 3rem;
+    width: 26rem;
     padding: 3px 10px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1px solid black;
     box-shadow: none;
     outline: none;
@@ -11,4 +12,12 @@
 
 .inputTagCSS:focus {
     border-color: none;
+}
+
+body{
+background-image: url(/public/noaa-IaRgDQiF36Q-unsplash.jpg);
+background-repeat:no-repeat;
+background-size: cover;
+background-position: center;
+height: 100vh;
 }
