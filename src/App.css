@@ -14,10 +14,10 @@
     border-color: none;
 }
 
+.tableCell {
+    border: none;
+}
+
 body{
-background-image: url(/public/noaa-IaRgDQiF36Q-unsplash.jpg);
-background-repeat:no-repeat;
-background-size: cover;
-background-position: center;
-height: 100vh;
+background-color: #F3FEE8;
 }
