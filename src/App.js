@@ -59,7 +59,7 @@ function App() {
   const temp = cityData.main !== undefined && getTempValue(cityData.main.temp); // give temp value
   const tempMax = cityData.main !== undefined && getTempValue(cityData.main.temp_max); // give maximum temp value
   const tempMin = cityData.main !== undefined && getTempValue(cityData.main.temp_min); // give minimum temp value
-  const humidity = cityData.main !== undefined && getTempValue(cityData.main.humidity); // give minimum Humidity value
+  const humidity = cityData.main !== undefined && cityData.main.humidity; // give minimum Humidity value
   const name = cityData.main !== undefined && cityData.name; // give city name value
   const country = cityData.sys !== undefined && cityData.sys.country; // give city name value
   const icon = cityData.weather !== undefined && cityData.weather[0].icon; // give icon value
