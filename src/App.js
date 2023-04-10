@@ -23,7 +23,7 @@ function App() {
   //method for call API for weather
   useEffect(() => {
     const fatchAPI = async () => {
-      const response = await fetch(url+searchText+"&appid="+API_KEY+"&units=metric")
+      const response = await fetch(url + searchText + "&appid=" + API_KEY + "&units=metric")
       const json = await response.json()
       setCityData(json)
       console.log('response', json);
@@ -48,6 +48,7 @@ function App() {
     }
   }
 
+  //method for get Time from milliseconds
   const getTime = (milliseconds) => {
     const dateFromString = milliseconds.toString() + "000"
     const dateObj = new Date(parseFloat(dateFromString));
@@ -135,64 +136,54 @@ function App() {
                 </TableRow>
               </TableBody>
             </Table>
-            <Table style={{ marginTop: '3rem', textAlign: 'center' }}>
-              <TableHead>
-                <TableRow>
-                  <TableCell style={{ border: 'none', textAlign: 'center' }}>
+            <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+              <div>
+                <div style={{ border: 'none', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <div style={{ border: 'none', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '1rem' }}>
                     <CustomWidthTooltip title={"Wind"} placement="top" arrow>
                       <Button>
                         <img src="https://cdn-icons-png.flaticon.com/512/4005/4005837.png" alt="" style={{ borderRadius: '20%', height: '3rem' }} />
                       </Button>
                     </CustomWidthTooltip>
-                  </TableCell>
-                  <TableCell style={{ border: 'none', textAlign: 'center' }}>
+                    <Typography style={{ fontSize: '1.5rem' }}>
+                      {cityData.wind.speed} meter/sec
+                    </Typography>
+                  </div>
+
+                  <div style={{ border: 'none', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '1rem' }}>
                     <CustomWidthTooltip title={"Humidity"} placement="top" arrow>
                       <Button>
                         <img src="https://cdn-icons-png.flaticon.com/512/9290/9290540.png" alt="" style={{ borderRadius: '20%', height: '3rem' }} />
                       </Button>
                     </CustomWidthTooltip>
-                  </TableCell>
-                  <TableCell style={{ border: 'none', textAlign: 'center' }}>
+                    <Typography style={{ fontSize: '1.5rem' }}>
+                      {humidity}%
+                    </Typography>
+                  </div>
+
+                  <div style={{ border: 'none', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '1rem' }}>
                     <CustomWidthTooltip title={"Sunrise Time"} placement="top" arrow>
                       <Button>
                         <img src="https://cdn-icons-png.flaticon.com/512/8098/8098355.png" alt="" style={{ borderRadius: '20%', height: '3rem' }} />
                       </Button>
                     </CustomWidthTooltip>
-                  </TableCell>
-                  <TableCell style={{ border: 'none', textAlign: 'center' }}>
+                    <Typography style={{ fontSize: '1.5rem' }}>
+                      {getTime(cityData.sys.sunrise)}
+                    </Typography>
+                  </div>
+                  <div style={{ border: 'none', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <CustomWidthTooltip title={"Sunset Time"} placement="top" arrow>
                       <Button>
                         <img src="https://cdn-icons-png.flaticon.com/512/8098/8098358.png" alt="" style={{ borderRadius: '20%', height: '3rem' }} />
                       </Button>
                     </CustomWidthTooltip>
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                <TableRow>
-                  <TableCell style={{ border: 'none', textAlign: 'center' }}>
-                    <Typography style={{ marginLeft: '1rem', fontSize: '2.1rem' }}>
-                      {cityData.wind.speed} meter/sec
-                    </Typography>
-                  </TableCell>
-                  <TableCell style={{ border: 'none', textAlign: 'center' }}>
-                    <Typography style={{ fontSize: '2.1rem' }}>
-                      {humidity}%
-                    </Typography>
-                  </TableCell>
-                  <TableCell style={{ border: 'none', textAlign: 'center' }}>
-                    <Typography style={{ fontSize: '2.1rem' }}>
-                      {getTime(cityData.sys.sunrise)}
-                    </Typography>
-                  </TableCell>
-                  <TableCell style={{ border: 'none', textAlign: 'center' }}>
-                    <Typography style={{ fontSize: '2.1rem' }}>
+                    <Typography style={{ fontSize: '1.5rem' }}>
                       {getTime(cityData.sys.sunset)}
                     </Typography>
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
           : <h2 style={{ textAlign: 'center' }}>There is No Data</h2>}
       </div>
