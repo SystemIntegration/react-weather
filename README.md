@@ -17,7 +17,7 @@
 
 
 ## Getting Started
-  - Clone the repository: <code>git clone git@github.com:SystemIntegration/react-js-weather.git</code>
+  - Clone the repository: <code>git clone git@github.com:systemintegration/react-weather.git</code>
   - Install dependencies: <code>npm install</code>
   - Start the development server: <code>npm start</code>
 
